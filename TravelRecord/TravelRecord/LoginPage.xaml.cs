@@ -13,5 +13,20 @@ namespace TravelRecord
         {
             InitializeComponent();
         }
+
+        public void LoginButton_Clicked(object sender , EventArgs e)
+        {
+            bool UserEmpty = string.IsNullOrEmpty(UserEntry.Text);
+            bool PassEmpty = string.IsNullOrEmpty(PasswordEntry.Text);
+
+            if (UserEmpty || PassEmpty)
+            {
+                ErrorLabel.Text = "Username or Password Invalid";
+            }
+            else
+            {
+                Navigation.PushAsync(new HomePage());
+            }
+        }
     }
 }

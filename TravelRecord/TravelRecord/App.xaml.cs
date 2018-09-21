@@ -11,7 +11,12 @@ namespace TravelRecord
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new NavigationPage(new LoginPage())
+            {
+                BarBackgroundColor = Color.White,
+                BackgroundColor= Color.Red,
+                BarTextColor = Color.Red
+            };
         }
 
         protected override void OnStart()

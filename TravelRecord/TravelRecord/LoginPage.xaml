@@ -2,14 +2,45 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TravelRecord"
-             x:Class="TravelRecord.MainPage">
+             x:Class="TravelRecord.LoginPage"
+             BackgroundColor="Red"
+             Title="Travel Record">
 
     <StackLayout>
         <!-- Login Page UI -->
         <Label x:Name ="LoginLabel"
+               FontSize="Large"
+               TextColor="White"
             Text= "Travel App!" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+           VerticalOptions="StartAndExpand" />
+        <Label x:Name="ErrorLabel"
+               TextColor="White"
+               HorizontalOptions="Center"/>
+        <Entry x:Name="UserEntry"
+               Placeholder="UserName"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               BackgroundColor= "Coral"
+               FontSize="Small"
+               WidthRequest="150"/>
+        <Entry x:Name="PasswordEntry"
+               Placeholder="Password"
+               IsPassword="True"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               BackgroundColor= "Coral"
+               FontSize="Small"
+               WidthRequest="150"/>
+        <Button x:Name="LoginButton"
+                WidthRequest="100"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Text="Login"
+                FontSize="Small"
+                TextColor="White"
+                BackgroundColor="DarkRed"
+                Clicked="LoginButton_Clicked"/>
     </StackLayout>
 
 </ContentPage>
