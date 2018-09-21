@@ -5,9 +5,9 @@
              x:Class="TravelRecord.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label x:Name ="" 
-            Text= " Travel App!" 
+        <!-- Login Page UI -->
+        <Label x:Name ="LoginLabel"
+            Text= "Travel App!" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
     </StackLayout>
