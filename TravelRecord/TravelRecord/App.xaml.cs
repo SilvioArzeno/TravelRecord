@@ -13,18 +13,13 @@ namespace TravelRecord
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new LoginPage())
-            {
-                BarBackgroundColor = Color.White,
-                HeightRequest = 2,
-                BarTextColor = Color.Red,
-                
-            };
+
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()
         {
-                        
+                     
         }
 
         protected override void OnSleep()

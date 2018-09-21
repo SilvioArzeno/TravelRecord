@@ -12,9 +12,6 @@ namespace TravelRecord
         public LoginPage()
         {
             InitializeComponent();
-            BG.WidthRequest = App.PhoneWidth;
-            BG.HeightRequest = App.PhoneHeight;
-
         }
 
         public void LoginButton_Clicked(object sender , EventArgs e)

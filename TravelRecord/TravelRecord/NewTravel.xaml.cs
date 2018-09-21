@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace TravelRecord
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class HomePage : TabbedPage
+	public partial class NewTravel : ContentPage
 	{
-		public HomePage ()
+		public NewTravel ()
 		{
 			InitializeComponent ();
 		}
-
-        private void AddTravel_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new NewTravel());
-        }
-    }
+	}
 }

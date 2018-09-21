@@ -3,9 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Tabs="clr-namespace:TravelRecord.TabsPages"
              x:Class="TravelRecord.HomePage">
-
-    <Tabs:HistoryPage/>
-    <Tabs:MapPage/>
-    <Tabs:ProfilePage/>
+    
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem x:Name="AddTravel"
+                     Text="+"
+                     Clicked="AddTravel_Clicked"
+                     />
+    </TabbedPage.ToolbarItems>
+    <Tabs:HistoryPage Title="History"/>
+    <Tabs:MapPage Title="Map"/>
+    <Tabs:ProfilePage Title="Profile"/>
 
 </TabbedPage>
