@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TravelRecord"
              x:Class="TravelRecord.LoginPage"
-             BackgroundColor="Red"
-             Title="Travel Record">
-
+             Title="Travel Record" >
     <StackLayout>
         <!-- Login Page UI -->
+        <Image x:Name="BG"
+                           Source="BackgroundRed.jpg"
+               IsVisible="False"/>
         <Label x:Name ="LoginLabel"
                FontSize="Large"
                TextColor="White"
@@ -42,5 +43,4 @@
                 BackgroundColor="DarkRed"
                 Clicked="LoginButton_Clicked"/>
     </StackLayout>
-
-</ContentPage>
+    </ContentPage>
