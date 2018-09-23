@@ -4,7 +4,19 @@
              x:Class="TravelRecord.App">
     <Application.Resources>
         <ResourceDictionary>
-           
+            <Style TargetType="NavigationPage">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BarBackgroundColor" Value="DodgerBlue"/>
+                <Setter Property="BarTextColor" Value="White"/>
+                <Setter Property="Title" Value="Travel Record"/>
+            </Style>
+            <Style TargetType="TabbedPage">
+                <Setter Property="BarTextColor" Value="White"/>
+                <Setter Property="BarBackgroundColor" Value="DodgerBlue"/>
+            </Style>
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="White"/>
+            </Style>
             <Style TargetType="Label" x:Key="TitleStyle">
                 <Setter Property="TextColor" Value="DodgerBlue"/>
                 <Setter Property="FontSize" Value="Large"/>
@@ -12,13 +24,13 @@
                 <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
             <Style TargetType="Label" x:Key="ErrorStyle">
-                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="TextColor" Value="Red"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
             <Style TargetType="Entry">
                 <Setter Property="BackgroundColor" Value="Transparent"/>
-                <Setter Property="PlaceholderColor" Value="AliceBlue"/>
+                <Setter Property="PlaceholderColor" Value="Aqua"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="FontSize" Value="Small"/>
