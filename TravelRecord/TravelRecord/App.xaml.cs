@@ -8,8 +8,6 @@ namespace TravelRecord
    
     public partial class App : Application
     {
-        public static int PhoneHeight { get; set; }
-        public static int PhoneWidth { get; set; }
         public App()
         {
             InitializeComponent();

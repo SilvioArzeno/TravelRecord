@@ -4,11 +4,12 @@
              x:Class="TravelRecord.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Style TargetType="NavigationPage">
+            <Style TargetType="NavigationPage" x:Key="NavigationStyle">
                 <Setter Property="BackgroundColor" Value="White"/>
                 <Setter Property="BarBackgroundColor" Value="DodgerBlue"/>
                 <Setter Property="BarTextColor" Value="White"/>
                 <Setter Property="Title" Value="Travel Record"/>
+                <Setter Property="HeightRequest" Value="20"/>
             </Style>
             <Style TargetType="TabbedPage">
                 <Setter Property="BarTextColor" Value="White"/>
@@ -27,10 +28,12 @@
                 <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="TextColor" Value="Red"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
             </Style>
             <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="Aqua"/>
                 <Setter Property="BackgroundColor" Value="Transparent"/>
-                <Setter Property="PlaceholderColor" Value="Aqua"/>
+                <Setter Property="PlaceholderColor" Value="Azure"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="FontSize" Value="Small"/>
@@ -41,7 +44,9 @@
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="Margin" Value="50,0,50,0"/>
                 <Setter Property="BorderRadius" Value="30"/>
-                <Setter Property="WidthRequest" Value="70"/>
+                <Setter Property="WidthRequest" Value="150"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

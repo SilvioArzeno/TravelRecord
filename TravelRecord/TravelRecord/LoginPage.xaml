@@ -3,9 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TravelRecord"
              x:Class="TravelRecord.LoginPage"
-             BackgroundImage="RedBackground.png">
+             Style="{StaticResource NavigationStyle}">
     <StackLayout>
-        <Image Source="RedBackground.png"/>
         <!-- Login Page UI -->
         <Label x:Name ="LoginLabel"
                Style ="{StaticResource TitleStyle}"

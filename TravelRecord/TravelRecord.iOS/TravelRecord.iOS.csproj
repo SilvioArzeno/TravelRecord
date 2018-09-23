@@ -157,4 +157,7 @@
       <Name>TravelRecord</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\RedBakcground.jpg" />
+  </ItemGroup>
 </Project>

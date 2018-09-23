@@ -3012,7 +3012,7 @@ namespace TravelRecord.Droid
 			public const int notify_panel_notification_icon_bg = 2130837802;
 			
 			// aapt resource value: 0x7f02012b
-			public const int RedBackground = 2130837803;
+			public const int RedBakcground = 2130837803;
 			
 			// aapt resource value: 0x7f02012c
 			public const int tooltip_frame_dark = 2130837804;
