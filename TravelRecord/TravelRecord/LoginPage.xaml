@@ -4,11 +4,12 @@
              xmlns:local="clr-namespace:TravelRecord"
              x:Class="TravelRecord.LoginPage"
              Style="{StaticResource NavigationStyle}">
-    <StackLayout>
+
+    <StackLayout VerticalOptions="Center">
         <!-- Login Page UI -->
         <Label x:Name ="LoginLabel"
                Style ="{StaticResource TitleStyle}"
-               Text= "Travel App!"  />
+               Text= "Travel App!"/>
         <Label x:Name="ErrorLabel"
                Style="{StaticResource ErrorStyle}"/>
         <Entry x:Name="UserEntry"
@@ -19,5 +20,12 @@
         <Button x:Name="LoginButton"
                 Text="Login"
                 Clicked="LoginButton_Clicked"/>
+        <Button x:Name="ForgotButton"
+                IsVisible="False"
+                Text="Forgot my password!"
+                BackgroundColor="Transparent"
+                VerticalOptions="EndAndExpand"
+                FontSize="Micro"
+                Clicked="ForgotButton_Clicked"/>
     </StackLayout>
-    </ContentPage>
+</ContentPage>

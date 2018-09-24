@@ -11,10 +11,11 @@ namespace TravelRecord
     {
         public LoginPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
         }
 
-        public void LoginButton_Clicked(object sender , EventArgs e)
+        private void LoginButton_Clicked(object sender , EventArgs e)
         {
             bool UserEmpty = string.IsNullOrEmpty(UserEntry.Text);
             bool PassEmpty = string.IsNullOrEmpty(PasswordEntry.Text);
@@ -22,11 +23,17 @@ namespace TravelRecord
             if (UserEmpty || PassEmpty)
             {
                 ErrorLabel.Text = "Username or Password Invalid";
+                ForgotButton.IsVisible = true;
             }
             else
             {
                 Navigation.PushAsync( new HomePage());
             }
+        }
+
+        private void ForgotButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new HomePage());
         }
     }
 }

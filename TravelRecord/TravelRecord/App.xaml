@@ -4,24 +4,31 @@
              x:Class="TravelRecord.App">
     <Application.Resources>
         <ResourceDictionary>
+            <!--Content pages Resources-->
             <Style TargetType="NavigationPage" x:Key="NavigationStyle">
                 <Setter Property="BackgroundColor" Value="White"/>
-                <Setter Property="BarBackgroundColor" Value="DodgerBlue"/>
+                <Setter Property="BarBackgroundColor" Value="Transparent"/>
                 <Setter Property="BarTextColor" Value="White"/>
                 <Setter Property="Title" Value="Travel Record"/>
                 <Setter Property="HeightRequest" Value="20"/>
+                <Setter Property="BackgroundImage" Value="BlueBackground.png"/>
             </Style>
             <Style TargetType="TabbedPage">
                 <Setter Property="BarTextColor" Value="White"/>
                 <Setter Property="BarBackgroundColor" Value="DodgerBlue"/>
+                <Setter Property="BackgroundImage" Value="BlueBackground.png"/>
             </Style>
             <Style TargetType="ContentPage">
                 <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BackgroundImage" Value="BlueBackground.png"/>
             </Style>
+
+            <!-- Elements Resources-->
+            
             <Style TargetType="Label" x:Key="TitleStyle">
                 <Setter Property="TextColor" Value="DodgerBlue"/>
                 <Setter Property="FontSize" Value="Large"/>
-                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Fill"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
             <Style TargetType="Label" x:Key="ErrorStyle">
@@ -31,7 +38,7 @@
                 <Setter Property="VerticalOptions" Value="Center"/>
             </Style>
             <Style TargetType="Entry">
-                <Setter Property="TextColor" Value="Aqua"/>
+                <Setter Property="TextColor" Value="WhiteSmoke"/>
                 <Setter Property="BackgroundColor" Value="Transparent"/>
                 <Setter Property="PlaceholderColor" Value="Azure"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>

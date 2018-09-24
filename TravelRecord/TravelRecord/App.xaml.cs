@@ -8,10 +8,17 @@ namespace TravelRecord
    
     public partial class App : Application
     {
+        public static string DBLocation { get; set; }
+
         public App()
         {
             InitializeComponent();
-
+            MainPage = new NavigationPage(new LoginPage());
+        }
+        public App(string dbLocation)
+        {
+            DBLocation = dbLocation;
+            InitializeComponent();
             MainPage = new NavigationPage(new LoginPage());
         }
 
