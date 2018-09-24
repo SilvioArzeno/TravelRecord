@@ -4,9 +4,10 @@
              xmlns:local="clr-namespace:TravelRecord"
              x:Class="TravelRecord.LoginPage"
              Style="{StaticResource NavigationStyle}">
-
+    
+    <!-- Login Page UI -->
     <StackLayout VerticalOptions="Center">
-        <!-- Login Page UI -->
+        
         <Label x:Name ="LoginLabel"
                Style ="{StaticResource TitleStyle}"
                Text= "Travel App!"/>
@@ -24,8 +25,8 @@
                 IsVisible="False"
                 Text="Forgot my password!"
                 BackgroundColor="Transparent"
-                VerticalOptions="EndAndExpand"
                 FontSize="Micro"
                 Clicked="ForgotButton_Clicked"/>
+        
     </StackLayout>
 </ContentPage>

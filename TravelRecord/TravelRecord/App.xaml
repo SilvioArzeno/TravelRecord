@@ -28,7 +28,7 @@
             <Style TargetType="Label" x:Key="TitleStyle">
                 <Setter Property="TextColor" Value="DodgerBlue"/>
                 <Setter Property="FontSize" Value="Large"/>
-                <Setter Property="VerticalOptions" Value="Fill"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
                 <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
             <Style TargetType="Label" x:Key="ErrorStyle">

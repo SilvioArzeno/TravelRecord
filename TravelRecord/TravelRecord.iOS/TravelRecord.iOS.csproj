@@ -160,4 +160,7 @@
       <Name>TravelRecord</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BlueBackground.png" />
+  </ItemGroup>
 </Project>
