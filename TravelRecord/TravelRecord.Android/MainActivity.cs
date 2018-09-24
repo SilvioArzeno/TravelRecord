@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.IO;
 
 namespace TravelRecord.Droid
 {
@@ -19,7 +20,12 @@ namespace TravelRecord.Droid
             //Detecting screen size
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+
+            string FolderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string DBFile = "TravelRecord.sqlite";
+            string FullPath = Path.Combine(FolderPath, DBFile);
+
+            LoadApplication(new App(FullPath));
         }
     }
 }

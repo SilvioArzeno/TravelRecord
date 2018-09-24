@@ -148,6 +148,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.5.231</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="2.5.1.527436" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -156,8 +159,5 @@
       <Project>{015D51BC-E395-4B97-A6B9-0507AC596746}</Project>
       <Name>TravelRecord</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\RedBakcground.jpg" />
   </ItemGroup>
 </Project>
