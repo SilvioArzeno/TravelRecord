@@ -27,6 +27,7 @@ namespace TravelRecord
             }
             else
             {
+                ErrorLabel.IsVisible = false;
                 Navigation.PushAsync( new HomePage());
             }
         }

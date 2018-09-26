@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,16 @@ namespace TravelRecord.TabsPages
 		{
 			InitializeComponent ();
 		}
-	}
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            
+            SQLiteConnection Connection = new SQLiteConnection(App.DBLocation);
+            Connection.CreateTable<TravelPost>();
+            var TravelPosts = Connection.Table<TravelPost>().ToList();
+            Connection.Close();
+
+        }
+
+    }
 }
