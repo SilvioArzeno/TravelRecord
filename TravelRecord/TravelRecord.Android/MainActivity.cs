@@ -20,6 +20,7 @@ namespace TravelRecord.Droid
             //Detecting screen size
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
 
             string FolderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string DBFile = "TravelRecord.sqlite";
