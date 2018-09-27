@@ -5,5 +5,7 @@
              x:Class="TravelRecord.TabsPages.MapPage">
     <maps:Map x:Name="LocationMap"
               HorizontalOptions="FillAndExpand"
-              VerticalOptions="FillAndExpand"/>
+              VerticalOptions="FillAndExpand"
+              IsShowingUser="true"
+              MapType="Hybrid"/>
 </ContentPage>

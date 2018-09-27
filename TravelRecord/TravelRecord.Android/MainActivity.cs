@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.IO;
+using Plugin.Permissions;
+using Plugin.CurrentActivity;
 
 namespace TravelRecord.Droid
 {
@@ -26,7 +28,14 @@ namespace TravelRecord.Droid
             string DBFile = "TravelRecord.sqlite";
             string FullPath = Path.Combine(FolderPath, DBFile);
 
+            CrossCurrentActivity.Current.Activity = this;
             LoadApplication(new App(FullPath));
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
+        {
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }
