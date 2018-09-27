@@ -20,11 +20,13 @@ namespace TravelRecord.TabsPages
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            
-            SQLiteConnection Connection = new SQLiteConnection(App.DBLocation);
-            Connection.CreateTable<TravelPost>();
-            var TravelPosts = Connection.Table<TravelPost>().ToList();
-            Connection.Close();
+
+            using (SQLiteConnection Connection = new SQLiteConnection(App.DBLocation))
+            {
+                Connection.CreateTable<TravelPost>();
+                var TravelPosts = Connection.Table<TravelPost>().ToList();
+                ExperienceListView.ItemsSource = TravelPosts;
+            }
 
         }
 
