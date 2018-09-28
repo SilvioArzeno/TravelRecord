@@ -12,12 +12,11 @@
 
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand">
-            <Editor x:Name="ExperienceEntry"
+            <Entry x:Name="ExperienceEntry"
                     BackgroundColor="Transparent"
-                    VerticalOptions="FillAndExpand"
+                    VerticalOptions="Center"
                     Margin="10"
                     FontSize="Small"
-                    HeightRequest="50"
                     TextColor="WhiteSmoke"/>
 
         </StackLayout>
