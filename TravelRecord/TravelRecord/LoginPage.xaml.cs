@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,7 @@ namespace TravelRecord
             InitializeComponent();
         }
 
+        
         private void LoginButton_Clicked(object sender , EventArgs e)
         {
             bool UserEmpty = string.IsNullOrEmpty(UserEntry.Text);
@@ -34,7 +37,7 @@ namespace TravelRecord
 
         private void ForgotButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new HomePage());
+           
         }
     }
 }

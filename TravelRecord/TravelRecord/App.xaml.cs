@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
+using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,7 +24,6 @@ namespace TravelRecord
             InitializeComponent();
             MainPage = new NavigationPage(new LoginPage());
         }
-
         protected override void OnStart()
         {
                      

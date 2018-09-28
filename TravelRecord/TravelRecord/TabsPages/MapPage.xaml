@@ -6,6 +6,5 @@
     <maps:Map x:Name="LocationMap"
               HorizontalOptions="FillAndExpand"
               VerticalOptions="FillAndExpand"
-              IsShowingUser="true"
               MapType="Hybrid"/>
 </ContentPage>
