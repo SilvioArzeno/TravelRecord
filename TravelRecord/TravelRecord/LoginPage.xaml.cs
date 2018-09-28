@@ -26,6 +26,7 @@ namespace TravelRecord
             if (UserEmpty || PassEmpty)
             {
                 ErrorLabel.Text = "Username or Password Invalid";
+                ErrorLabel.IsVisible = true;
                 ForgotButton.IsVisible = true;
             }
             else
@@ -37,7 +38,7 @@ namespace TravelRecord
 
         private void ForgotButton_Clicked(object sender, EventArgs e)
         {
-           
+            Navigation.PushAsync(new HomePage());
         }
     }
 }

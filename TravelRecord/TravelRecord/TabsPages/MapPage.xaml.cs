@@ -23,9 +23,9 @@ namespace TravelRecord.TabsPages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            var PermissionStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
             try
             {
+                var PermissionStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
                 if (PermissionStatus != PermissionStatus.Granted)
                 {
                     if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Location))
@@ -58,17 +58,25 @@ namespace TravelRecord.TabsPages
                 var Position = await Locator.GetPositionAsync();
                 Locator.PositionChanged += Locator_PositionChanged;
                 await Locator.StartListeningAsync(TimeSpan.FromSeconds(0), 100);
-                LocationMap.MoveToRegion(new Xamarin.Forms.Maps.MapSpan(new Xamarin.Forms.Maps.Position(Position.Latitude, Position.Longitude), .5, .5));
+                LocationMap.MoveToRegion(new Xamarin.Forms.Maps.MapSpan(new Xamarin.Forms.Maps.Position(Position.Latitude, Position.Longitude), .005f, .005f));
             }
             catch(Exception)
             {
-               await DisplayAlert("Unable to access map", "We were unable to acces the map , please allow the app to acces your location", "Ok");
+               await DisplayAlert("Unable to access map", "We were unable to access the map , please allow the app to access your location", "Ok");
             }
+        }
+
+        protected async override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            var Locator = CrossGeolocator.Current;
+            Locator.PositionChanged -= Locator_PositionChanged;
+            await Locator.StopListeningAsync();
         }
 
         private void Locator_PositionChanged(object sender, Plugin.Geolocator.Abstractions.PositionEventArgs e)
         {
-            LocationMap.MoveToRegion(new Xamarin.Forms.Maps.MapSpan(new Xamarin.Forms.Maps.Position(e.Position.Latitude, e.Position.Longitude), 2, 2));
+            LocationMap.MoveToRegion(new Xamarin.Forms.Maps.MapSpan(new Xamarin.Forms.Maps.Position(e.Position.Latitude, e.Position.Longitude), .005f, .005f));
         }
     }
 }
