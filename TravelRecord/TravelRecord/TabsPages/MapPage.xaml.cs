@@ -25,17 +25,30 @@ namespace TravelRecord.TabsPages
             var PermissionStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
             if(PermissionStatus != PermissionStatus.Granted)
             {
-                var Result = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Location);
-                if (Result.ContainsKey(Permission.Location))
+                if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Location))
                 {
-                    PermissionStatus = Result[Permission.Location];
-                    LocationMap.IsShowingUser = true;
+                    var Result = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Location);
+                    if (Result.ContainsKey(Permission.Location))
+                    {
+                        PermissionStatus = Result[Permission.Location];
+                        LocationMap.IsShowingUser = true;
+                    }
+                    else
+                    {
+                        await DisplayAlert("Location Permission Denied ", "We are unable to open the map without your location", "Ok");
+                        LocationMap.IsShowingUser = false;
+                    }
                 }
+
                 else
                 {
                     await DisplayAlert("Location Permission Denied ", "We are unable to open the map without your location", "Ok");
+                    LocationMap.IsShowingUser = false;
                 }
- 
+            }
+            else
+            {
+                LocationMap.IsShowingUser = true;
             }
         }
     }
