@@ -12,7 +12,8 @@
                Style ="{StaticResource TitleStyle}"
                Text= "Travel App!"/>
         <Label x:Name="ErrorLabel"
-               Style="{StaticResource ErrorStyle}"/>
+               Style="{StaticResource ErrorStyle}"
+               IsVisible="False"/>
         <Entry x:Name="UserEntry"
                Placeholder="UserName"/>
         <Entry x:Name="PasswordEntry"
