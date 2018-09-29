@@ -62,7 +62,7 @@ namespace TravelRecord.TabsPages
             }
             catch(Exception)
             {
-               await DisplayAlert("Unable to access map", "We were unable to access the map , please allow the app to access your location", "Ok");
+                OnDisappearing();
             }
         }
 

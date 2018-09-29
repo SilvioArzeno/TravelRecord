@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -12,12 +13,14 @@ namespace TravelRecord.Logic
         public async static Task<List<Venue>> GetVenues(double latitude , double longitude)
         {
             List<Venue> Venues = new List<Venue>();
-            var URL = Venue.GenerateURL(latitude, longitude);
+            var URL = VenueRoot.GenerateURL(latitude, longitude);
 
             using (HttpClient Client = new HttpClient())
             {
                var Response = await Client.GetAsync(URL);
                var Json = await Response.Content.ReadAsStringAsync();
+               var VenueRoot = JsonConvert.DeserializeObject<VenueRoot>(Json);
+                Venues = VenueRoot.Response.venues as List<Venue>;
             }
                 return Venues;
         } 

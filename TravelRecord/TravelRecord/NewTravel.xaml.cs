@@ -25,7 +25,7 @@ namespace TravelRecord
 
             var Locator = CrossGeolocator.Current;
             var Position =await Locator.GetPositionAsync();
-            var Venues = VenueLogic.GetVenues(Position.Latitude,Position.Longitude);
+            var Venues = await VenueLogic.GetVenues(Position.Latitude,Position.Longitude);
         }
 
         private void SaveButton_Clicked(object sender, EventArgs e)
