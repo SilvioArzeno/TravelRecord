@@ -13,6 +13,7 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand">
             <Entry x:Name="ExperienceEntry"
+                    Placeholder="Enter your experience"
                     BackgroundColor="Transparent"
                     VerticalOptions="Center"
                     Margin="10"
