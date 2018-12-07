@@ -1,6 +1,7 @@
 ﻿using Plugin.Geolocator;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,11 +60,38 @@ namespace TravelRecord.TabsPages
                 Locator.PositionChanged += Locator_PositionChanged;
                 await Locator.StartListeningAsync(TimeSpan.FromSeconds(0), 100);
                 LocationMap.MoveToRegion(new Xamarin.Forms.Maps.MapSpan(new Xamarin.Forms.Maps.Position(Position.Latitude, Position.Longitude), .005f, .005f));
+                using (SQLiteConnection Connection = new SQLiteConnection(App.DBLocation))
+                {
+                    Connection.CreateTable<TravelPost>();
+                    var TravelPosts = Connection.Table<TravelPost>().ToList();
+                    DisplayInMap(TravelPosts);
+                }
             }
             catch(Exception)
             {
                 OnDisappearing();
             }
+        }
+
+        private void DisplayInMap(List<TravelPost> travelPosts)
+        {
+            try
+            {
+                foreach (TravelPost post in travelPosts)
+                {
+                    var position = new Xamarin.Forms.Maps.Position(post.Latitude, post.Longitude);
+
+                    var pin = new Xamarin.Forms.Maps.Pin()
+                    {
+                        Type = Xamarin.Forms.Maps.PinType.SavedPin,
+                        Position = position,
+                        Label = post.VenueName,
+                        Address = post.Address
+                    };
+                    LocationMap.Pins.Add(pin);
+                }
+            }
+            catch (Exception){ }
         }
 
         protected async override void OnDisappearing()

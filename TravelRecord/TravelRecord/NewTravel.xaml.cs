@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TravelRecord.Logic;
+using TravelRecord.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -31,22 +32,39 @@ namespace TravelRecord
 
         private void SaveButton_Clicked(object sender, EventArgs e)
         {
-            TravelPost post = new TravelPost()
+            try
             {
-                Experience = ExperienceEntry.Text
-            };
+                var selectedVenue = VenueList.SelectedItem as Venue;
+                var FirstCategoryID = selectedVenue.categories.FirstOrDefault();
+                TravelPost post = new TravelPost()
+                {
+                    Experience = ExperienceEntry.Text,
+                    VenueName = selectedVenue.name,
+                    CategoryId = FirstCategoryID.id,
+                    CategoryName = FirstCategoryID.name,
+                    Address = selectedVenue.location.address,
+                    Distance = selectedVenue.location.distance,
+                    Longitude = selectedVenue.location.lng,
+                    Latitude = selectedVenue.location.lat
 
-            using (SQLiteConnection Connection = new SQLiteConnection(App.DBLocation))
-            {
-                Connection.CreateTable<TravelPost>();
-                int rows = Connection.Insert(post);
+                };
 
-                if (rows > 0)
-                    DisplayAlert("Experienced saved", "Your experienced was saved succesfully", "Ok");
-                else
-                    DisplayAlert("Oops!", "Your Experienced was not saved", "Ok");
+                using (SQLiteConnection Connection = new SQLiteConnection(App.DBLocation))
+                {
+                    Connection.CreateTable<TravelPost>();
+                    int rows = Connection.Insert(post);
+
+                    if (rows > 0)
+                        DisplayAlert("Experienced saved", "Your experienced was saved succesfully", "Ok");
+                    else
+                        DisplayAlert("Oops!", "Your Experienced was not saved", "Ok");
+                }
+                Navigation.PushAsync(new HomePage());
             }
-            Navigation.PushAsync(new HomePage());
+            catch (Exception)
+            {
+
+            }
         }
     }
 }
