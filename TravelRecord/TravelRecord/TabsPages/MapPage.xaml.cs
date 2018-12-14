@@ -88,6 +88,7 @@ namespace TravelRecord.TabsPages
                         Label = post.VenueName,
                         Address = post.Address
                     };
+                    if(pin.Label != null)
                     LocationMap.Pins.Add(pin);
                 }
             }
