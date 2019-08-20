@@ -51,7 +51,7 @@
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="Margin" Value="50,0,50,0"/>
                 <Setter Property="BorderRadius" Value="30"/>
-                <Setter Property="WidthRequest" Value="150"/>
+                <Setter Property="WidthRequest" Value="150"/>   
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
             </Style>
